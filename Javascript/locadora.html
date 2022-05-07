@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Locadora JS</h1>
+
+    <p>Titulo do filme <input type="text" id="inTitulo"></p>
+    <p>Duração <input type="number" id="inDuracao"></p>
+    <p><input type="button" value="Converte" Id="btCalcula" onclick="converte()"></p>
+    <h2><p id="outResposta"></p></h2>
+
+    <script>
+        function converte(){
+        var inTitulo=document.getElementById("inTitulo").value;
+        var inDuracao=document.getElementById("inDuracao").value;
+        var outResposta=document.getElementById("outResposta")
+        
+        var horas, minutos;
+
+        horas=Math.trunc(inDuracao/60)
+        minutos=inDuração%60
+
+        outResposta.textContent="Título: ",inTitulo,"<br>Duração: ",horas," horas e",minutos,"minutos";
+        }
+    </script>
+</body>
+</html>

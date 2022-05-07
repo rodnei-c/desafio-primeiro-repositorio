@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CALCULAR MÉDIA</h1>
+
+    <p>Nota: <input type="number" id="inNota"></p>
+    <p><input type="button" value="Calcular Média" id="btnCalcular" onclick="calcular()"></p>
+    <P><input type="button" value="Adicionar" id="btnAdd" onclick="add()"></P>
+    <pre><p id="outResposta1"></p></pre>
+    <pre><p id="outResposta2"></p></pre>
+
+    <script>
+        var valor = [];
+
+        function add() {
+            inNota = Number(document.getElementById("inNota").value);
+
+            valor.push(inNota);
+            listaNota();
+            document.getElementById("inNota").value = ""
+        }
+        function listaNota() {
+            outResposta1 = document.getElementById("outResposta1");
+            outResposta1.textContent = "";
+            for (i = 0; i < valor.length; i++) {
+                outResposta1.textContent = outResposta1.textContent + valor[i]+",";
+            }
+        }
+        function calcular()
+        {
+            outResposta2=document.getElementById("outResposta2");
+            var soma=0;
+            for(i=0;i<valor.length;i++)
+            {
+                soma=soma+valor[i]
+            }
+            var media=soma/valor.length;
+            outResposta2.textContent="Média: "+media.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nomes e idades</h1>
+    <p>Nome: <input type="text" id="inNome"></p>
+    <p>Idade: <input type="number" id="inIdade"></p>
+    <input type="button" value="Adiciona" onclick="Adiciona()">
+    <input type="button" value="Seleciona o mais velho" onclick="MaisVelho()">
+    <input type="button" value="Seleciona o mais novo" onclick="MaisNovo()">
+    <pre><p id="outResposta"></p></pre>
+    <p id="outResposta1"></p>
+
+    <script>
+        var nome=[],idade=[];
+
+        function Adiciona() {
+            inNome=document.getElementById("inNome");
+            inIdade=document.getElementById("inIdade");
+
+            nome.push(inNome.value);
+            idade.push(Number(inIdade.value));
+
+            inNome.value="";
+            inIdade.value="";
+
+            document.getElementById("outResposta").textContent="Nome: "+nome+"\nIdade: "+idade;
+        }
+
+        function MaisVelho() {
+            var maisVelho=0;
+            var posicaoMaisVelho=0;
+            for(i=0;i<idade.length;i++){
+                if(maisVelho<idade[i]){
+                    maisVelho=idade[i]
+                    posicaoMaisVelho=i;
+                }
+            }
+            document.getElementById("outResposta1").textContent=nome[posicaoMaisVelho];
+        }
+
+        function MaisNovo() {
+            var maisNovo=99999;
+            //var maisNovo=idade[0]
+            var posicaoMaisNovo=0;
+            for(i=0;i<idade.length;i++){
+                if(maisNovo<idade[i]){
+                    maisNovo=idade[i]
+                    posicaoMaisNovo=i;
+                }
+            }
+            document.getElementById("outResposta1").textContent=nome[posicaoMaisNovo];
+        }
+    </script>
+</body>
+</html>

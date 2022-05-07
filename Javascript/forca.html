@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Jogo da forca</h1>
+    <p> Digite a palavra <input type="text" id="txtPalavra"><input type="button" value="Registrar Palavra"
+            id="btnRegistra" onclick="regWord()"></p>
+    <p> Digite uma letra <input type="text" id="txtLetra"><input type="button" value="Registrar Palavra"
+            id="btnTentativa" disabled="true" onclick="regLetter()"></p>
+
+    <p id="outErro"></p>
+    <p id="outTentativa"></p>
+
+    <script>
+        var palavra = [];
+
+        var erros = [];
+        var acertos = [];
+
+        function regWord() {
+            txtPalavra = document.getElementById("txtPalavra");
+            palavraRegistrada = txtPalavra.value;
+            //outTentativa=document.getElementById("outTentativa");
+
+            for (i = 0; i < palavraRegistrada.length; i++) {
+                palavra[i] = palavraRegistrada.charAt(i)
+                acertos[i] = "_"
+            }
+            txtPalavra.value = "*****"
+            imprimeTentativa();
+
+            document.getElementById("btnRegistra").disabled = true
+            document.getElementById("btnTentativa").disabled = false
+
+        }
+
+        function imprimeTentativa() {
+            outTentativa = document.getElementById("outTentativa");
+            outTentativa.textContent = "Suas tentativas:" + acertos
+        }
+
+        function regLetter() {
+            txtLetra = document.getElementById("txtLetra");
+            letra = txtLetra.value
+            errou = true
+            for (i = 0; i < palavra.length; i++) {
+                if (letra == palavra[i]) {
+                    acertos[i] = letra
+                    errou = false
+                }
+
+            }
+            if (errou == true) {
+                if (erros.indexOf(letra) == -1) {
+                    erros.push(letra)
+                }
+                document.getElementById("outErro").textContent = "Erros:" + erros
+            }
+            imprimeTentativa()
+            txtLetra.value = ""
+            txtLetra.focus()
+        }        
+    </script>
+</body>
+
+</html>

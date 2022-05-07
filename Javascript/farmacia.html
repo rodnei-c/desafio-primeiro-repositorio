@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> farmacia js</h1>
+    <p>medicamento<input type="text" id="txtMed"></p>
+    <p>preço<input type="number" id="txtPreco"></p>
+    <p><input type="button" id="btnCalcula" value="mostrar promo" onclick="Promocao()"></p>
+
+    <p id="outResposta"></p>
+
+    <script>
+        function Promocao(){
+            var txtMed=document.getElementById("txtMed").value;
+            var txtPreco=document.getElementById("txtPreco").value;
+            var outResposta=document.getElementById("outResposta");
+
+            valorPromocao=Math.floor(2*txtPreco)
+
+            outResposta.textContent="Promoção de "+txtMed+". Leve 2 por R$"+valorPromocao.toFixed(2)
+            
+
+        }
+    </script>
+</body>
+</html>

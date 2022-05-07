@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NOTA FISCAL</h1>
+    <p>Produto: <input type="text" id="inProduto"></p>
+    <p>Valor: <input type="number" id="inValor"></p>
+    <p>Quantidade: <input type="number" id="inQuant"></p>
+    <p><input type="button" value="Adicionar" id="btnAdd" onclick="add()"></p>
+    <p><input type="button" value="Valor Produto" id="btnValor" onclick="valorCada()"></p>
+    <p><input type="button" value="Valor Total" id="btnTotal" onclick="valorTotal()"></p>
+    <pre><p id="outResposta1"></p></pre>
+    <pre><p id="outResposta2"></p></pre>
+    <pre><p id="outResposta3"></p></pre>
+
+    <script>
+    var valor=[],total=[],produto=[],quant=[];
+
+    function add(){
+        var inProduto=document.getElementById("inProduto");
+        var inValor=document.getElementById("inValor");
+        var inQuant=document.getElementById("inQuant");
+
+        produto.push(inProduto.value);
+        valor.push(Number(inValor.value));
+        quant.push(Number(inQuant.value));
+        inProduto.value=""
+        inValor.value=""
+        inQuant.value=""
+
+        document.getElementById("outResposta1").textContent="Produto: "+produto+"\nValor: "+valor+"\nQuantidade: "+quant;
+        
+    }
+    function valorCada(){
+        var outResposta2=document.getElementById("outResposta2");
+        var somaProduto=0;
+        for(i=0;i<produto.length;i++)
+        {
+            somaProduto=valor[i]*quant[i];
+            outResposta2.textContent=outResposta2.textContent+produto[i]+": "+somaProduto+"R$\n";
+        }
+        
+    }
+    function valorTotal(){
+        var outResposta3=document.getElementById("outResposta3");
+        var somaTotal=0
+        var valorTotal=0
+
+        for(i=0;i<produto.length;i++)
+        {
+            somaTotal=valor[i]*quant[i];
+            valorTotal=valorTotal+somaTotal;
+        }
+        outResposta3.textContent="Valor Total: "+valorTotal+"R$";
+    }
+
+    </script>
+</body>
+</html>

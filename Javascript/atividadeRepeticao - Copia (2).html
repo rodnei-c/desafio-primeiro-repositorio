@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nota, cpf, codigo, quant, nome;
+
+        nota = 1
+
+        while (nota != 0) 
+        {
+            nota = window.prompt("digite nota fiscal: ")
+
+            if (nota == 0) 
+            {
+                break;
+            }
+            cpf = window.prompt("digite cpf: ")
+            nome = window.prompt("digite nome: ")
+
+            codigo = -1
+            while (codigo != 0) 
+            {
+                codigo = window.prompt("digite codigo do produto: ")
+                if (codigo == 0) 
+                {
+                    break;
+                }
+                quant = window.prompt("digite quantidade de produtos: ")
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

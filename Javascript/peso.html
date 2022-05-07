@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Calcular Peso</h1>
+    <p>Nome: <input type="text" id="inNome"></p>
+  
+    <p>Sexo: <input type="radio" name="sexo" id="rbMasculino">Masculino
+             <input type="radio" name="sexo" id="rbFeminino">Feminino</p>
+    <p>Altura: <input type="number" id="inAltura"></p>
+    <p><input type="button" value="Calcular" id="btnCalcula" onclick="calcular()">
+        <input type="button" value="Limpar Campos" id="btnLimpa" onclick="limpaCampos()"></p>
+    <h2><p id="outResposta"></p></h2>
+
+    <script>
+        function limpaCampos(){
+            document.getElementById("inNome").value="";
+            document.getElementById("rbMasculino").checked=false;
+            document.getElementById("rbFeminino").checked=false;
+            document.getElementById("inAltura").value="";
+            document.getElementById("outResposta").textContent="";           
+
+        }
+        function calcular(){
+            inNome=document.getElementById("inNome").value;
+            rbMasculino=document.getElementById("rbMasculino").checked;
+            rbFeminino=document.getElementById("rbFeminino").checked;
+            inAltura=document.getElementById("inAltura").value;
+            outResposta=document.getElementById("outResposta");
+            
+            if(rbFeminino){
+                pesoIdeal=21*Math.pow(inAltura,2);
+            }
+            else{
+                pesoIdeal=22*Math.pow(inAltura,2);
+            }
+            outResposta.textContent=inNome+", seu peso ideal é "+pesoIdeal.toFixed(2);
+        }
+    </script>
+</body>
+</html>

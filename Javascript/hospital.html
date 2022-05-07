@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Consultório odontológico</h1>
+    <p>Paciente: <input type="text" id="inPaciente">
+    
+    <input type="button" value="adicionar" onclick="adiciona()">
+    <input type="button" value="urgencia" onclick="urgente()">
+    <input type="button" value="atende" onclick="atende()"></p>
+    <pre><h3><p id="outResposta1"></p></h3></pre>
+    <pre><h3><p id="outResposta2"></p></h3></pre>
+
+    <script>
+        var pacientes=[]
+
+        function adiciona()
+        {
+            var inPaciente=document.getElementById("inPaciente").value;
+            pacientes.push(inPaciente);
+            mostrarListaPacientes();
+            document.getElementById("inPaciente").value=""
+
+        }
+        function mostrarListaPacientes()
+        {
+            var outResposta2=document.getElementById("outResposta2");
+            outResposta2.textContent="";
+
+            for(i=0; i<pacientes.length;i++)
+            {
+                outResposta2.textContent=outResposta2.textContent+(i+1)+" - "+ pacientes[i]+"\n"
+            }
+        }
+
+        function urgente()
+        {
+            inPaciente=document.getElementById("inPaciente").value;
+            
+            pacientes.unshift(inPaciente);
+            mostrarListaPacientes();
+            document.getElementById("inPaciente").value="";
+        }
+
+        function atende()
+        {
+            outResposta1=document.getElementById("outResposta1");
+            //emAtendimento=pacientes.shift();
+            //outResposta1.textContent="Em atendimento: "+emAtendimento;
+            resposta="Em atendimento: "+pacientes.shift();
+            outResposta1.textContent=resposta;
+            mostrarListaPacientes();
+        }
+    </script>
+</body>
+</html>

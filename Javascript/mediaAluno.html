@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>PROGRAMA SITUAÇÃO DO ALUNO</h1>
+
+    <p>Nome do Aluno: <input type="text" id="inNome"></p>
+    <p>Nota 1: <input type="number" id="inNota1"></p>
+    <p>Nota 2: <input type="number" id="inNota2"></p>
+    <p><input type="button" value="Calcular Média" id="btnCalcular" onclick="calcular()"></p>
+    <p id="outResposta1"></p>
+    <p id="outResposta2"></p>
+
+    <script>
+        function calcular(){
+            inNome=document.getElementById("inNome").value;
+            inNota1=Number(document.getElementById("inNota1").value);
+            inNota2=Number(document.getElementById("inNota2").value);
+            outResposta1=document.getElementById("outResposta1");
+            outResposta2=document.getElementById("outResposta2");
+
+            
+            media=(inNota1+inNota2)/2
+
+            if(media>5){
+                outResposta1.textContent="Sua média é "+media+". Parabéns, "+inNome+"! Você foi aprovado";
+            } else{
+                outResposta2.textContent="Sua média é "+media+". Sinto muito "+inNome+"! Você foi reprovado";
+            }
+            
+        }
+    </script>
+</body>
+</html>

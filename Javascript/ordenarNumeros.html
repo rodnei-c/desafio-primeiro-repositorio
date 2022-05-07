@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAMA ORDENA NUMEROS</h1>
+    <p>Numero: <input type="number" id="inNumero">
+    <input type="button" value="adicionar" id="btnAdiciona" onclick="adicionar()"></p>
+    <p><input type="button" value="ordem crescente" id="btnAsc" onclick="crescente()"></p>
+    <p><input type="button" value="ordem decrescente" id="btnDesc" onclick="decrescente()"></p>
+    <pre><h3><p id="outResposta1"></p></h3></pre>
+    <pre><h3><p id="outResposta2"></p></h3></pre>
+
+    <script>
+        var numeros=[];
+        function adicionar()
+        {
+            inNumero=document.getElementById("inNumero").value;
+            outResposta1=document.getElementById("outResposta1");
+            //if(numeros.index0f(inNumero)==-1)
+            if(numeros.find(teste => teste==inNumero)==undefined)
+            {
+            numeros.push(inNumero);
+            outResposta1.textContent="Números: ";
+            for(i=0;i<numeros.length;i++)
+            {
+            outResposta1.textContent=outResposta1.textContent+numeros[i]+","
+            }
+            document.getElementById("inNumero").value="";
+            }
+        }
+        function crescente()
+        {
+            tempNumeros=numeros;
+            outResposta2=document.getElementById("outResposta2");
+            tempNumeros.sort(function(a, b){return (a-b)});
+            outResposta2.textContent="Números em ordem crescente:"+tempNumeros;
+        }
+        function decrescente()
+        {
+            tempNumeros=numeros;
+            outResposta2=document.getElementById("outResposta2");
+            tempNumeros.sort(function(a, b){return (b-a)});
+            outResposta2.textContent="Números em ordem crescente:"+tempNumeros;
+        }
+    </script>
+</body>
+</html>

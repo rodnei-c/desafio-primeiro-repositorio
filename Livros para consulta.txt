@@ -1,0 +1,10 @@
+Livros para consulta
+
+A Web Mobile, Programe para um mundo de muitos dispositivos - SÉRGIO LOPES
+Agile, Desenvolvimento de software com entregas frequentes e foco no valor de negócio - ANDRÉ FARIA GOMES
+Node.js, Aplicações web real-time com Node.js - CAIO RIBEIRO PEREIRA
+CDI, Integre as dependências e contextos do seu código Java - GILLIARD CORDEIRO
+Componentes Reutilizáveis em Java com Reflexões e Anotações - EDUARDO GUERRA
+Google Android, Crie aplicações para celulares e tablets - JOÃO BOSCO MONTEIRO
+Guia da Startup, Como startups e empresas estabelecidas podem criar produtos web rentáveis - JOAQUIM TORRES
+Scrum, Gestão Ágil para Projetos de Sucesso - RAFAEL SABBAGH

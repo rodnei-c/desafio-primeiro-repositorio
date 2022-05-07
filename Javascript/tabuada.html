@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAMA STABUADA</h1>
+
+    <p>Número: <input type="number" id="inNumero"></p>
+    <p><input type="button" value="calcular" id="btnCalcular" onclick="calcular()"></p>
+    <pre><p id="outResposta"></p></pre>
+
+    <script>
+        function calcular(){
+            inNumero=Number(document.getElementById("inNumero").value);
+            outResposta=document.getElementById("outResposta");
+
+            outResposta.textContent=""
+            
+            for(i=1;i<11;i++)
+            {
+                outResposta.textContent=outResposta.textContent+inNumero+"x"+i+"="+inNumero*i+"\n"
+            }
+
+            
+        }
+    </script>
+    
+
+</body>
+</html>
